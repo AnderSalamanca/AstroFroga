@@ -1,17 +1,18 @@
 ---
-const platform = "github";
-const username = "AnderSalamanca";
-const social = "x";
-const twitteruser = "ander_salamanca";
+import Social from './social.astro';
 ---
+<style>
+    footer {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 
 <footer>
     <p>
-        ¡Más información sobre mis proyectos en <a
-            href={`https://www.${platform}.com/${username}`}>{platform}</a
-        >!
-        Y <a
-        href={`https://www.${social}.com/${username}`}>{social}</a
-        >!
+        <Social platform="twitter" username="ander_salamanca" />
+        <Social platform="github" username="AnderSalamanca" />
+        <Social platform="youtube" username="Auronplay" />
     </p>
 </footer>

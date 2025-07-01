@@ -1,7 +1,5 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/navigation.astro";
-import Footer from '../components/footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Sobre mi";
 const identity = {
   firstName: "Ander",
@@ -25,28 +23,7 @@ const goal = 3;
 
 const skillColor = "navy";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle}>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 
     <p>
@@ -87,6 +64,4 @@ const skillColor = "navy";
         <p>Mi objetivo no son 3 días.</p>
       )
     }
-    <Footer />
-  </body>
-</html>
+</BaseLayout>
